@@ -1,7 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include "include/SpaceCraft.h"
+#include "src/SpaceCraft.cpp"
 
 using namespace std;
 
