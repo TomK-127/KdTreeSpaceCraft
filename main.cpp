@@ -41,6 +41,7 @@ int main()
 
         // Process new position
         space_craft.UpdatePosition(command_position);
+        space_craft.FindNearestPlanet();
         space_craft.PrintStatus();
     }
 
