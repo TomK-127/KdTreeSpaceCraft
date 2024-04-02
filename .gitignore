@@ -1,0 +1,4 @@
+# ignore auto generated .vscode files
+.vscode/
+.DS_Store
+.clang-format
