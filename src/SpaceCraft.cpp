@@ -25,7 +25,11 @@ public:
         _position[1] = 0.0;
         _position[2] = 0.0;
 
-        _orientation = "";
+        _kd_tree = KdTree();
+
+        LoadPlanets(file_name);
+
+        _orientation = _kd_tree.FindNearestNeighbor(_position);
     }
 
     /// @brief Updates internal position of spacecraft based commanded position
@@ -35,6 +39,8 @@ public:
         _position[0] += command_position[0];
         _position[1] += command_position[1];
         _position[2] += command_position[2];
+
+        _orientation = _kd_tree.FindNearestNeighbor(_position);
     }
 
     /// @brief Prints orientation and position of spacecraft
@@ -43,11 +49,6 @@ public:
         cout << "Space craft (x,y,z) position: " << _position[0] << ", " << _position[1] << ", " << _position[2]
              << endl;
         cout << "Closest planet to space craft: " << _orientation << endl;
-    }
-
-    void FindNearestPlanet()
-    {
-        _orientation = _kd_tree.FindNearestNeighbor(_position);
     }
 
     void AddPlanet(float position[3], string name)
@@ -95,10 +96,10 @@ public:
     }
 
 public:
-    string _orientation;  /// name of planet closest to spacecraft
+    string _orientation; /// name of planet closest to spacecraft
 
 private:
-    float _position[3];            /// x, y, z coordinates of spacecraft
-    KdTree _kd_tree;               /// kd tree model for planets
-    map<string, Planet> _planets;  /// dictionary of planets surrounding spacecraft
+    float _position[3];           /// x, y, z coordinates of spacecraft
+    KdTree _kd_tree;              /// kd tree model for planets
+    map<string, Planet> _planets; /// dictionary of planets surrounding spacecraft
 };
