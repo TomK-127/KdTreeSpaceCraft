@@ -22,6 +22,7 @@ void SpaceCraft::UpdatePosition(float command_position[3])
 
 void SpaceCraft::PrintStatus()
 {
-    cout << "Space craft orientation: " << _orientation << " with (x,y,z) position:" << _position[0] << ", "
+    cout << "Space craft (x,y,z) position: " << _position[0] << ", "
          << _position[1] << ", " << _position[2] << endl;
+    cout << "Closest planet to space craft: " << _orientation << endl;
 }

@@ -1,7 +1,7 @@
 #include <map>
 #include <string>
 #include <vector>
-#include "KdTree.h"
+// #include "KdTree.h"
 
 using namespace std;
 
@@ -26,8 +26,8 @@ public:
     void PrintStatus();
 
 public:
-    string _orientation;  /// name of planet closest to spacecraft
+    string _orientation; /// name of planet closest to spacecraft
 
 private:
-    float _position[3];  /// x, y, z coordinates of spacecraft
+    float _position[3]; /// x, y, z coordinates of spacecraft
 };

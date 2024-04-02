@@ -9,25 +9,23 @@ int main()
 {
     // Initialize with a csv file containing planet's x,y,z coordinates
     SpaceCraft space_craft("data/planets_1.csv");
-    space_craft.PrintStatus();
 
-    cout << "Welcome to the SpaceCraft simulator!" << endl;
-    cout << "Enter command positions in the form x y z" << endl;
-    cout << "The space craft will start at 0,0,0" << endl;
+    cout << "Welcome to the Kd-Tree Space Craft simulator!" << endl;
+    space_craft.PrintStatus();
 
     // Enter a loop to accept user input
     while (true)
     {
         // Prompt the user for input
         string user_input;
-        cout << "Enter command position (x,y,z) or 'exit' to quit: ";
+        cout << "Enter command position (x y z) or 'exit' to quit: ";
         getline(cin, user_input);
 
         // Exit condition
         if (user_input == "exit")
         {
             cout << "Exiting program. Goodbye!" << endl;
-            break;  // Exit the loop
+            break; // Exit the loop
         }
 
         // Parse the user input
@@ -43,6 +41,7 @@ int main()
 
         // Process new attitude
         space_craft.UpdatePosition(command_position);
+        space_craft.PrintStatus();
     }
 
     return 0;
