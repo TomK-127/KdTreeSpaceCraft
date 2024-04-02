@@ -25,7 +25,7 @@ int main()
         if (user_input == "exit")
         {
             cout << "Exiting program. Goodbye!" << endl;
-            break; // Exit the loop
+            break;  // Exit the loop
         }
 
         // Parse the user input
@@ -39,7 +39,7 @@ int main()
             continue;
         }
 
-        // Process new attitude
+        // Process new position
         space_craft.UpdatePosition(command_position);
         space_craft.PrintStatus();
     }
