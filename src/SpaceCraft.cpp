@@ -100,11 +100,10 @@ public:
     {
         float min_distance = numeric_limits<float>::max();
         string min_planet = "";
-        for (auto planet : _planets)
+        for (auto &planet : _planets)
         {
             float distance = sqrt(
-                    pow(_position[0] - planet.second.position[0], 2) + pow(_position[1] - planet.second.position[1], 2)
-                    + pow(_position[2] - planet.second.position[2], 2));
+                pow(_position[0] - planet.second.position[0], 2) + pow(_position[1] - planet.second.position[1], 2) + pow(_position[2] - planet.second.position[2], 2));
             if (distance == min_distance)
             {
                 // Combine names if they are the same distance away
@@ -120,10 +119,10 @@ public:
     }
 
 public:
-    string _orientation;  /// name of planet closest to spacecraft
+    string _orientation; /// name of planet closest to spacecraft
 
 private:
-    float _position[3];            /// x, y, z coordinates of spacecraft
-    KdTree _kd_tree;               /// kd tree model for planets
-    map<string, Planet> _planets;  /// dictionary of planets surrounding spacecraft
+    float _position[3];           /// x, y, z coordinates of spacecraft
+    KdTree _kd_tree;              /// kd tree model for planets
+    map<string, Planet> _planets; /// dictionary of planets surrounding spacecraft
 };
