@@ -8,3 +8,7 @@ To compile space craft application:
   
 To run space craft application:  
 ```./bin/SpaceCraft```  
+
+To compile and run tests:  
+```g++ test.cpp src/*.cpp -o bin/SpaceCraft_test```  
+```./bin/SpaceCraft_test```  
